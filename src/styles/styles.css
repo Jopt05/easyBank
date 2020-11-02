@@ -44,7 +44,7 @@ p {
 }
 
 .padding {
-    padding: 0px 30px;
+    padding: 0px 15px;
 }
 
 .nav {
@@ -74,6 +74,28 @@ p {
 
 .nav__menu span:not(:last-child) {
     margin-bottom: 3px;
+}
+
+.navigator {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin-top: 0px;
+    padding: 0px 30px;
+    bottom: -150px;
+    left: 0;
+    border-radius: 25px;
+    background-color: red;
+}
+
+.navigator li {
+    color: black;
+}
+
+.navigator li:not(:last-child){
+    margin-bottom: 5px;
 }
 
 .hero {
@@ -323,9 +345,16 @@ h2 {
     }
 
     .navigator {
+        position: static;
         list-style: none;
-        display: flex;
-        margin: auto;
+        align-items: center;
+        margin: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: row;
+        padding: 0px;
+        border-radius: 0px;
+        background-color: transparent;
     }
 
     .navigator li {
@@ -351,6 +380,7 @@ h2 {
 
     .navigator li:not(:last-child){
         margin-right: 15px;
+        margin-bottom: 0px;
     }
 
     .desktopNav .buttonInvite {
