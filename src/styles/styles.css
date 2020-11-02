@@ -67,6 +67,21 @@ p {
     z-index: 5000;
 }
 
+.attribution {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--DarkBlue);
+    color: white;
+}
+
+.attribution a {
+    color: white;
+    margin-left: 5px;
+}
+
 .nav__menu {
     height: auto;
     width: 20px;
@@ -636,6 +651,11 @@ h2 {
     .rightsp {
         margin-bottom: 0px;
         margin-top: auto;
+    }
+
+    .attribution {
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
     .buttonInvite:hover {
