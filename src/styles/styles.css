@@ -26,6 +26,10 @@ body, html {
     margin: 0;
 }
 
+body {
+    position: relative;
+}
+
 .noScrollable {
     overflow-x: hidden;
 }
@@ -41,6 +45,11 @@ p {
 
 .desktopNav {
     display: none;
+    
+}
+
+.blocked {
+    overflow: hidden;
 }
 
 .padding {
@@ -60,7 +69,7 @@ p {
 
 .nav__menu {
     height: auto;
-    width: 15px;
+    width: 20px;
     margin-left: auto;
 }
 
@@ -70,7 +79,24 @@ p {
     width: 100%;
     border-radius: 25px;
     background-color: var(--DarkBlue);
+    transition: all .2s ease-in-out;
+    transform-origin: 1.5px 1px;
 }
+
+.hidden1 {
+    transform: rotate(45deg);
+}
+
+.hidden2 {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.hidden3 {
+    transform: rotate(-45deg);
+}
+    
 
 .nav__menu span:not(:last-child) {
     margin-bottom: 3px;
@@ -83,19 +109,52 @@ p {
     align-items: center;
     list-style: none;
     margin-top: 0px;
-    padding: 0px 30px;
-    bottom: -150px;
+    padding: 20px 0px;
+    bottom: -250px;
+    width: 80%;
+    transform: translateX(12%);
     left: 0;
-    border-radius: 25px;
-    background-color: red;
+    border-radius: 5px;
+    background-color: white;
+    visibility: hidden;
+    opacity: 0;
+
+    transition-property: visibility, opacity;
+    transition-duration: .2s, .2s;
+    transition-timing-function: ease-in-out;
 }
 
 .navigator li {
-    color: black;
+    color: var(--DarkBlue);
 }
 
 .navigator li:not(:last-child){
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.cortain {
+    position: absolute;
+    z-index: 4000;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    background-image: linear-gradient(hsl(233, 26%, 24%), transparent);
+    transition-property: visibility, opacity;
+    transition-duration: .2s, .2s;
+    transition-timing-function: ease-in-out;
+}
+
+.cortainShow {
+    visibility: visible;
+    opacity: 1;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
 }
 
 .hero {
@@ -108,6 +167,7 @@ p {
     position: relative;
     width: 100%;
     background-image: url("/src/assets/bg-intro-mobile.svg");
+    background-repeat: no-repeat;
     height: 350px;
     margin-bottom: 20px;
 }
@@ -345,9 +405,9 @@ h2 {
     }
 
     .navigator {
+        width: auto;
         position: static;
-        list-style: none;
-        align-items: center;
+        flex-direction: row;
         margin: 0px;
         margin-left: auto;
         margin-right: auto;
@@ -355,6 +415,10 @@ h2 {
         padding: 0px;
         border-radius: 0px;
         background-color: transparent;
+        transform: translateX(0);
+        border-radius: 0px;
+        opacity: 1;
+        visibility: visible;
     }
 
     .navigator li {
@@ -411,7 +475,7 @@ h2 {
         position: absolute;
         width: 120%;
         height: 100%;
-        background-image: url(/src/assets/bg-intro-desktop.svg);
+        background-image: url("/src/assets/bg-intro-desktop.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 96%;
@@ -423,7 +487,7 @@ h2 {
         position: absolute;
         width: 150%;
         height: 120%;
-        background-image: url(/src/assets/image-mockups.png);
+        background-image: url("/src/assets/image-mockups.png");
         background-repeat: no-repeat;
         background-position: center 86%;
         background-size: 46%;
