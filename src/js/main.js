@@ -1,6 +1,6 @@
 const menuBtn = document.querySelector('.nav__menu'),
     navigator = document.querySelector('.navigator'),
-    body      = document.querySelector('body');
+    body      = document.querySelector('body'),
     cortain   = document.querySelector('.cortain'),
     span      = document.querySelectorAll('span');
 
